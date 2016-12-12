@@ -13,7 +13,7 @@ import moment1.Array7x7;
 /**
  * Test environment for Array7 and Array7x7. 
  * @author Lucas Borg
- * @version 0.5
+ * @version 1.0
  */
 
 public class TestEnvironmentArrays extends JPanel implements ActionListener {
@@ -71,9 +71,9 @@ public class TestEnvironmentArrays extends JPanel implements ActionListener {
 				mainGrid[i][j] = new JLabel();
 				mainGrid[i][j].setFont(mono);
 				mainGrid[i][j].setText(array7x7.getElement(i, j) + "");
-				System.out.print(mainGrid[i][j].getText() + "  "); //For testing of correct loading of numbers 
+//				System.out.print(mainGrid[i][j].getText() + "  "); //For testing of correct loading of numbers 
 			}
-			System.out.println();//For testing
+//			System.out.println();//For testing
 		}
 	}
 	
@@ -107,6 +107,7 @@ public class TestEnvironmentArrays extends JPanel implements ActionListener {
 			tf = new JTextField();
 			tfRow[i] = tf;
 			tfRow[i].setSize( new Dimension(labelX, labelY));
+			tfRow[i].setFont(mono);
 			tfRow[i].setBackground(Color.ORANGE);
 			tfRow[i].setForeground(Color.WHITE);
 			south.add(tfRow[i]);
@@ -125,6 +126,7 @@ public class TestEnvironmentArrays extends JPanel implements ActionListener {
 			tf = new JTextField();
 			tfColumn[i] = tf;
 			tfColumn[i].setSize( new Dimension(labelX, labelY));
+			tfColumn[i].setFont(mono);
 			tfColumn[i].setBackground(Color.ORANGE);
 			tfColumn[i].setForeground(Color.WHITE);
 //			west.add(tfColumn[i]);
@@ -140,17 +142,23 @@ public class TestEnvironmentArrays extends JPanel implements ActionListener {
 		
 		readRow.setSize( new Dimension(buttonX, buttonY));
 		readRow.setBackground(Color.GREEN);
+		readRow.setFont(mono);
 		writeRow.setSize( new Dimension(buttonX, buttonY));
 		writeRow.setBackground(Color.GREEN);
+		writeRow.setFont(mono);
 		readColumn.setSize( new Dimension(buttonX, buttonY));
 		readColumn.setBackground(Color.GREEN);	
+		readColumn.setFont(mono);
 		writeColumn.setSize( new Dimension(buttonX, buttonY));
 		writeColumn.setBackground(Color.GREEN);
+		writeColumn.setFont(mono);
 		
 		inputRowNbr.setSize( new Dimension(buttonX, buttonY));
 		inputRowNbr.setBackground(Color.GREEN);
+		inputRowNbr.setFont(mono);
 		inputColumnNbr.setSize( new Dimension(buttonX, buttonY));
 		inputColumnNbr.setBackground(Color.GREEN);
+		inputColumnNbr.setFont(mono);
 		
 		panelRight.add(readRow);
 		panelRight.add(writeRow);
@@ -189,7 +197,7 @@ public class TestEnvironmentArrays extends JPanel implements ActionListener {
 		}
 		
 		else if(e.getSource()==writeColumn) {
-			
+			writeColumn();
 		}
 	}
 	
